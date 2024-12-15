@@ -1,13 +1,13 @@
 {
   "name": "outside",
   "version": "2.0.0",
-  "description": "Boilerplate for WDD 330 SleepOutside project",
+  "description": "Diet webpage project",
   "main": "main.js",
   "scripts": {
     "start": "vite",
     "build": "vite build --emptyOutDir",
     "preview": "vite preview",
-    "lint": "eslint *.js src/**/*.js",
+    "lint": "eslint *.js from/**/*.js",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
     "test": "jest"
   },

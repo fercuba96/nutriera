@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Planner</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="divider" id="main-header">
+    </header>
+  <div class="container">
+    <h1>Meal Planner</h1>
+    <form id="mealForm">
+      <label for="query">Main Ingredient/Dish:</label>
+      <input type="text" id="query" placeholder="e.g., chicken, pasta" required>
+      
+      <label for="diet">Dietary Preference:</label>
+      <select id="diet">
+        <option value="">None</option>
+        <option value="balanced">Balanced</option>
+        <option value="high-protein">High-Protein</option>
+        <option value="low-carb">Low-Carb</option>
+        <option value="low-fat">Low-Fat</option>
+      </select>
+      
+      <label for="health">Health Restrictions:</label>
+      <select id="health">
+        <option value="">None</option>
+        <option value="vegan">Vegan</option>
+        <option value="vegetarian">Vegetarian</option>
+        <option value="gluten-free">Gluten-Free</option>
+        <option value="dairy-free">Dairy-Free</option>
+      </select>
+      
+      <label for="calories">Calories (e.g., 200-400):</label>
+      <input type="text" id="calories" placeholder="e.g., 200-400">
+      
+      <button type="submit">Get Meal Plan</button>
+    </form>
+    
+    <div id="results"></div>
+  </div>
+  <footer id="main-footer"></footer>
+  <script src="../js/app.js" type="module"></script>
+</body>
+</html>

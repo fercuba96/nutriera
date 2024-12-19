@@ -2,8 +2,8 @@ import {loadHeaderFooter} from "./general.mjs";
 
 loadHeaderFooter();
 
-//const APP_ID = "eef4ee3e"; // Replace with your Edamam Application ID
-//const APP_KEY = "ad38f0479ab02300d2429eddee32310a"; // Replace with your Edamam API Key
+//const APP_ID = "eef4ee3e";
+//const APP_KEY = "ad38f0479ab02300d2429eddee32310a"; 
 
 const form = document.getElementById("mealForm");
 const resultsDiv = document.getElementById("results");
@@ -11,26 +11,22 @@ const resultsDiv = document.getElementById("results");
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   
-  // Get user inputs
   const query = document.getElementById("query").value;
   const diet = document.getElementById("diet").value;
   const health = document.getElementById("health").value;
   const calories = document.getElementById("calories").value;
 
-  // Build the API URL
   let apiUrl = `https://api.edamam.com/search?q=${query}&app_id=eef4ee3e&app_key=ad38f0479ab02300d2429eddee32310a`;
   if (diet) apiUrl += `&diet=${diet}`;
   if (health) apiUrl += `&health=${health}`;
   if (calories) apiUrl += `&calories=${calories}`;
   
   try {
-    // Fetch data from Edamam API
     const response = await fetch(apiUrl);
     if (!response.ok) throw new Error("Failed to fetch recipes");
     const data = await response.json();
-    console.log("API URL:", apiUrl); // Log the URL to verify it's correct
+    console.log("API URL:", apiUrl); 
 
-    // Render results
     displayResults(data.hits);
   } catch (error) {
     console.error("Error fetching recipes:", error);
@@ -39,7 +35,7 @@ form.addEventListener("submit", async (event) => {
 });
 
 function displayResults(meals) {
-  resultsDiv.innerHTML = ""; // Clear previous results
+  resultsDiv.innerHTML = ""; 
   
   if (meals.length === 0) {
     resultsDiv.innerHTML = `<p>No recipes found. Try different filters.</p>`;

@@ -11,23 +11,23 @@ body {
     color: #333;
   }
 
-  h1, h2, p, a {
+h1, h2, p, a {
     margin: 20px auto;
     text-align: center;
     max-width: 600px;
-  }
+}
   
-  h1 {
+h1 {
     color: #00796B;
     font-size: 2rem;
-  }
+}
   
-  h2 {
+h2 {
     color: #00796B;
     font-size: 1.5rem;
   }
   
-  img {
+img {
     display: block;
     margin: 20px auto;
     width: 100%;
@@ -35,7 +35,7 @@ body {
     border-radius: 10px;
   }
   
-  a {
+a {
     display: inline-block;
     margin: 20px;
     padding: 10px 20px;
@@ -44,14 +44,14 @@ body {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-  }
+}
   
-  a:hover {
+a:hover {
     background-color: #00796B;
     color: #fff;
   }
   
-  .container {
+.container {
     width: 90%;
     max-width: 800px;
     margin: 2rem auto;
@@ -61,75 +61,75 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  h1 {
+h1 {
     text-align: center;
     color: #4CAF50;
   }
   
-  form {
+form {
     margin-bottom: 1.5rem;
   }
   
-  label {
+label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
   }
   
-  input, select, button {
+input, select, button {
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
+}
   
-  button {
+button {
     background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
   }
   
-  button:hover {
+button:hover {
     background-color: #45a049;
   }
   
-  #results {
+#results {
     margin-top: 1.5rem;
   }
   
-  .meal {
+.meal {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
   }
   
-  .meal img {
+.meal img {
     max-width: 100%;
     border-radius: 8px;
   }
   
-  .meal h2 {
+.meal h2 {
     margin: 0 0 0.5rem 0;
   }
   
-  .meal a {
+.meal a {
     color: #4CAF50;
     text-decoration: none;
   }
 
-  a {
+a {
     text-decoration: none;
     color: #4CAF50;
   }
   
-  a:hover {
+a:hover {
     color: #3a9e41;
   }
   
-  header.divider {
+header.divider {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
@@ -138,39 +138,39 @@ body {
     color: #fff;
   }
   
-  header.divider .logo {
+header.divider .logo {
     display: flex;
     align-items: center; 
   }
   
-  header.divider .logo img {
+header.divider .logo img {
     height: 50px; 
     margin-right: 5px; 
   }
   
-  header.divider .logo a {
+header.divider .logo a {
     text-decoration: none;
     color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
   }
   
-  header.divider .logo .highlight {
+header.divider .logo .highlight {
     color: #FFCA28; 
   }
   
-  header.divider .login a {
+header.divider .login a {
     text-decoration: none;
     color: #0f0e0b;
     font-weight: bold;
     font-size: 1rem;
   }
   
-  header.divider .login a:hover {
+header.divider .login a:hover {
     color: #fff;
   }
   
-  .footer {
+.footer {
     background-color: #333;
     color: white;
     text-align: center;
@@ -178,26 +178,80 @@ body {
     margin-top: 2rem;
   }
   
-  .footer p {
+.footer p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
   }
   
-  .footer-links {
+.footer-links {
     margin-top: 0.5rem;
   }
   
-  .footer-links a {
+.footer-links a {
     margin: 0 10px;
     font-size: 0.9rem;
     color: #4CAF50;
   }
   
-  .footer-links a:hover {
+.footer-links a:hover {
     color: #3a9e41;
   }
+
+.form-container {
+    max-width: 400px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
   
-  @media (max-width: 768px) {
+form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+}
+  
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+form button {
+    padding: 10px 20px;
+    background: #00796B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+form button:hover {
+    background: #005F57;
+  }
+  
+#welcome {
+    margin-top: 20px;
+  }
+  
+#welcome button {
+    padding: 10px 20px;
+    background: #FFCA28;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+#welcome button:hover {
+    background: #FFC107;
+}
+
+
+  
+@media (max-width: 768px) {
     header.divider {
         flex-direction: column; 
         text-align: center;

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register and Login</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script  src="../js/main.js" type="module"></script>
+</head>
+<body>
+    <header class="divider" id="main-header">
+    </header>
+
+  <main>
+    <section id="loginForm" class="form-container hidden">
+      <h2>Login</h2>
+      <form id="login" method="post">
+        <label for="loginUsername">Username</label>
+        <input type="text" id="loginEmail" required>
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" required>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section>
+        <p>You dont have an account yet?</p>
+        <a href="/register/">Register</a>
+    </section>
+
+    <section id="welcome" class="hidden">
+      <h2>Welcome, <span id="user"></span>!</h2>
+      <button id="logout">Logout</button>
+    </section>
+  </main>
+
+  <footer id="main-footer"></footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

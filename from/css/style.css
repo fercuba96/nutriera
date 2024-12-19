@@ -60,6 +60,10 @@ a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
+
+ #results, #saved-recipes {
+    margin-top: 2rem;
+  }
   
 h1 {
     text-align: center;
@@ -106,18 +110,47 @@ button:hover {
     margin-bottom: 1rem;
   }
   
-.meal img {
+.meal img, .saved-recipe img {
     max-width: 100%;
     border-radius: 8px;
   }
   
-.meal h2 {
+.meal h2, .saved-recipe h3 {
     margin: 0 0 0.5rem 0;
   }
   
 .meal a {
     color: #4CAF50;
     text-decoration: none;
+  }
+
+.save-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+.save-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+#saved-recipes h2 {
+    text-align: center;
+  }
+.meal, .saved-recipe {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    text-align: center;
   }
 
 a {
@@ -268,5 +301,12 @@ form button:hover {
     
       img {
         width: 90%; 
+      }
+      .meal, .saved-recipe {
+        font-size: 0.9rem;
+      }
+    
+      .save-btn {
+        font-size: 0.8rem;
       }
     }

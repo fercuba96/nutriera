@@ -55,4 +55,6 @@ async function supabaseRegisterUser(email, password) {
     }
   });
   
+
   export { supabaseRegisterUser, supabaseLoginUser };
+

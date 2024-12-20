@@ -39,7 +39,7 @@ form.addEventListener("submit", async (event) => {
 function displayResults(meals) {
   resultsDiv.innerHTML = ""; 
   
-  if (meals.length === 0) {
+  if (!meals || meals.length === 0) {
     resultsDiv.innerHTML = `<p>No recipes found. Try different filters.</p>`;
     return;
   }
@@ -53,6 +53,10 @@ function displayResults(meals) {
       <img src="${meal.recipe.image}" alt="${meal.recipe.label}">
       <p><strong>Calories:</strong> ${Math.round(meal.recipe.calories)}</p>
       <p><strong>Diet Labels:</strong> ${meal.recipe.dietLabels.join(", ") || "None"}</p>
+      <p><strong>Health Labels:</strong> ${meal.recipe.healthLabels.join(", ") || "None"}</p>
+      <p><strong>Cuisine Type:</strong> ${meal.recipe.cuisineType?.join(", ") || "Unknown"}</p>
+      <p><strong>Meal Type:</strong> ${meal.recipe.mealType?.join(", ") || "Unknown"}</p>
+      <p><strong>Ingredients:</strong> ${meal.recipe.ingredientLines.join(", ")}</p>
       <a href="${meal.recipe.url}" target="_blank">View Recipe</a>
       <button class="save-btn">Save Recipe</button>
     `;
@@ -73,10 +77,15 @@ function saveRecipe(recipe) {
     }
   
     savedRecipes.push({
-      label: recipe.label,
-      url: recipe.url,
-      image: recipe.image,
-      calories: Math.round(recipe.calories),
+        label: recipe.label,
+        url: recipe.url,
+        image: recipe.image,
+        calories: Math.round(recipe.calories),
+        dietLabels: recipe.dietLabels || [],
+        healthLabels: recipe.healthLabels || [],
+        cuisineType: recipe.cuisineType || [],
+        mealType: recipe.mealType || [],
+        ingredients: recipe.ingredientLines || [],
     });
   
     localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
@@ -98,15 +107,21 @@ function saveRecipe(recipe) {
       recipeDiv.classList.add("saved-recipe");
   
       recipeDiv.innerHTML = `
-        <h3>${recipe.label}</h3>
-        <img src="${recipe.image}" alt="${recipe.label}">
-        <p><strong>Calories:</strong> ${recipe.calories}</p>
-        <a href="${recipe.url}" target="_blank">View Recipe</a>
-        <button class="delete-btn" data-index="${index}">Delete</button>
-      `;
+      <h3>${recipe.label}</h3>
+      <img src="${recipe.image}" alt="${recipe.label}">
+      <p><strong>Calories:</strong> ${recipe.calories}</p>
+      <p><strong>Diet Labels:</strong> ${recipe.dietLabels?.join(", ") || "None"}</p>
+      <p><strong>Health Labels:</strong> ${recipe.healthLabels?.join(", ") || "None"}</p>
+      <p><strong>Cuisine Type:</strong> ${recipe.cuisineType?.join(", ") || "None"}</p>
+      <p><strong>Meal Type:</strong> ${recipe.mealType?.join(", ") || "None"}</p>
+      <p><strong>Ingredients:</strong> ${recipe.ingredients?.join(", ") || "None"}</p>
+      <a href="${recipe.url}" target="_blank">View Recipe</a>
+      <button class="delete-btn" data-index="${index}">Delete</button>
+    `;
+
     const deleteButton = recipeDiv.querySelector(".delete-btn");
     deleteButton.addEventListener("click", () => deleteRecipe(index));
-      savedRecipesDiv.appendChild(recipeDiv);
+    savedRecipesDiv.appendChild(recipeDiv);
     });
   }
 
